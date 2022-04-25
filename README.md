@@ -48,7 +48,7 @@ For this week's homework, please use the following VM setup:
 
 Once you complete this assignment, submit your findings in the following document: 
 
-- [Report.docx] attached to this github repository
+- [Report.docx] attached to this github repository: https://github.com/philippe75004/Penetration-Testing-1-Homework/blob/3b007de07f5a5b7e324a67a9bcaf553561f92f4c/Report-Homework%20Penetration%20Test%20Engagement.docx
  
 ### Instructions
 
