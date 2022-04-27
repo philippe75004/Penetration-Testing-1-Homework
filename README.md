@@ -111,7 +111,7 @@ MAC Address: 00:15:5D:00:04:01 (Microsoft)
 	 
 	 root@kali:/usr/share/nmap/scripts# searchsploit icecast
 
-![searchsploit icecast](/blob/main/Screenshots/Nmap.PNG "searchsploit icecast")
+![searchsploit icecast](/Screenshots/Nmap.PNG "searchsploit icecast")
 ----------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
  Exploit Title                                                                                                                                             |  Path
 ----------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
