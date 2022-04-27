@@ -110,6 +110,8 @@ MAC Address: 00:15:5D:00:04:01 (Microsoft)
      > Answer: searchsploit icecast
 	 
 	 root@kali:/usr/share/nmap/scripts# searchsploit icecast
+
+![searchsploit icecast](/images/path/to/folder/image.png "searchsploit icecast")
 ----------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
  Exploit Title                                                                                                                                             |  Path
 ----------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
@@ -148,6 +150,8 @@ Matching Modules
    #  Name                                 Disclosure Date  Rank   Check  Description
    -  ----                                 ---------------  ----   -----  -----------
    0  exploit/windows/http/icecast_header  2004-09-28       great  No     Icecast Header Overwrite
+
+
  
    - Run the command to use the Icecast module:
 
