@@ -153,3 +153,7 @@ C. Run the command that displays the target's computer system information:
    > Answer: C:\Program Files (x86)\Icecast2 Win32>systeminfo
 
 ![Meterpreter shell](/Screenshots/Meterpreter-shell2.PNG "Meterpreter shell")
+
+**Recommendations for the client to protect their server**
+
+-Deploy an XDR + IPS + HIPS solutions to protect servers, network against this kind of Metsaploit attacks, tools.
