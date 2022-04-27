@@ -145,66 +145,11 @@ A. Run a Meterpreter post script that enumerates all logged on users.
 B. Open a Meterpreter shell. 
  
   > Answer: meterpreter > shell
-Process 6380 created.
-Channel 5 created.
-Microsoft Windows [Version 10.0.17763.1935]
-(c) 2018 Microsoft Corporation. All rights reserved.
 
-C:\Program Files (x86)\Icecast2 Win32>
+![Meterpreter shell](/Screenshots/Meterpreter-shell.PNG "Meterpreter shell")
 
 C. Run the command that displays the target's computer system information:
 
-   > Answer: C:\Program Files (x86)\Icecast2 Win32>systeminfo | more
+   > Answer: C:\Program Files (x86)\Icecast2 Win32>systeminfo
 
-
-Host Name:                 MSEDGEWIN10
-OS Name:                   Microsoft Windows 10 Enterprise Evaluation
-OS Version:                10.0.17763 N/A Build 17763
-OS Manufacturer:           Microsoft Corporation
-OS Configuration:          Standalone Workstation
-OS Build Type:             Multiprocessor Free
-Registered Owner:
-Registered Organization:   Microsoft
-Product ID:                00329-20000-00001-AA236
-Original Install Date:     3/19/2019, 4:59:35 AM
-System Boot Time:          4/19/2022, 6:18:07 PM
-System Manufacturer:       Microsoft Corporation
-System Model:              Virtual Machine
-System Type:               x64-based PC
-Processor(s):              1 Processor(s) Installed.
-                           [01]: Intel64 Family 6 Model 79 Stepping 1 GenuineIntel ~2295 Mhz
-BIOS Version:              American Megatrends Inc. 090007 , 5/18/2018
-Windows Directory:         C:\Windows
-System Directory:          C:\Windows\system32
-Boot Device:               \Device\HarddiskVolume1
-System Locale:             en-us;English (United States)
-Input Locale:              en-us;English (United States)
-Time Zone:                 (UTC-08:00) Pacific Time (US & Canada)
-Total Physical Memory:     2,066 MB
-Available Physical Memory: 559 MB
-Virtual Memory: Max Size:  3,346 MB
-Virtual Memory: Available: 1,605 MB
-Virtual Memory: In Use:    1,741 MB
-Page File Location(s):     C:\pagefile.sys
-Domain:                    WORKGROUP
-Logon Server:              \\MSEDGEWIN10
-Hotfix(s):                 11 Hotfix(s) Installed.
-                           [01]: KB4601555
-                           [02]: KB4465065
-                           [03]: KB4470788
-                           [04]: KB4480056
-                           [05]: KB4486153
-                           [06]: KB4535680
-                           [07]: KB4537759
-                           [08]: KB4539571
-                           [09]: KB4549947
-                           [10]: KB5003243
-                           [11]: KB5003171
-Network Card(s):           1 NIC(s) Installed.
-                           [01]: Microsoft Hyper-V Network Adapter
-                                 Connection Name: Ethernet
-                                 DHCP Enabled:    No
-                                 IP address(es)
-                                 [01]: 192.168.0.20
-                                 [02]: fe80::19ba:64e7:838c:b1b6
-Hyper-V Requirements:      A hypervisor has been detected. Features required for Hyper-V will not be displayed.
+![Meterpreter shell](/Screenshots/Meterpreter-shell2.PNG "Meterpreter shell")
