@@ -180,8 +180,6 @@ Recently Logged Users
  S-1-5-21-321011808-3761883066-353627080-1004  C:\Users\vagrant
 
 
- 
-     
 B. Open a Meterpreter shell. 
  
   > Answer: meterpreter > shell
